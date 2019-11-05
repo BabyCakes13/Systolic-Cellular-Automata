@@ -66,7 +66,7 @@ public class CellularAutomaton {
 	
 	public void printCell(boolean status) {
 		if (status) {
-			System.out.print("0");
+			System.out.print(0);
 		} else {
 			System.out.print(" ");
 		}
@@ -87,7 +87,6 @@ public class CellularAutomaton {
 			rightNeighbour = generation.get(cellIndex + 1);
 		}
 		
-		//System.out.println(leftNeighbour.getState() + "-" + rightNeighbour.getState());
 		boolean newState = Cell.computeNewState(leftNeighbour, rightNeighbour);
 		return newState;
 	}
