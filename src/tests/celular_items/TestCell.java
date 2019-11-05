@@ -12,7 +12,7 @@ public class TestCell implements TestInterface{
 	public void testGetState() {
 		for(boolean state : possibleStates) {
 			Cell newCell = new Cell(state);
-			Assert.assertEquals(state, newCell.state());
+			Assert.assertEquals(state, newCell.getState());
 		}
 	}
 	

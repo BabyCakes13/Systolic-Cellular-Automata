@@ -17,6 +17,10 @@ public class Cell {
 	public Cell(boolean state) {
 		this.state = state;
 	}
+	
+	public void setState(boolean state) {
+		this.state = state;
+	}
 
 	/**
 	 * Return the state of the current {@link Cell}.
@@ -24,7 +28,7 @@ public class Cell {
 	 * @return boolean: The state of the current {@link Cell}.
 	 * @author babycakes
 	 */
-	public boolean state() {
+	public boolean getState() {
 		return this.state;
 	}
 
@@ -41,7 +45,7 @@ public class Cell {
 	 * 
 	 */
 	public static boolean computeNewState(Cell leftNeighbour, Cell rightNeighbour) {
-		if (leftNeighbour.state() == rightNeighbour.state()) {
+		if (leftNeighbour.getState() == rightNeighbour.getState()) {
 			return false;
 		} else {
 			return true;
