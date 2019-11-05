@@ -1,9 +1,10 @@
-package tests;
+package tests.celular_items;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import celular_items.Cell;
+import tests.TestInterface;
 
 public class TestCell implements TestInterface{
 	
