@@ -39,20 +39,27 @@ public class CellularAutomaton {
 
 	public void runGenerations() {
 		ArrayList<Cell> generation = this.createBasicGeneration();
+		ArrayList<Boolean> newStates;
 		
 		for (int generationsIndex = 0; generationsIndex < this.generations; generationsIndex++) {
+			//System.out.println("\nGeneration " + generationsIndex);
+			System.out.println();
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("\nGeneration " + generationsIndex);
+			newStates = new ArrayList<Boolean>();
 			
 			for(int cellIndex = 0; cellIndex < this.length; cellIndex++) {
 				this.printCell((generation.get(cellIndex).getState()));
 				boolean newState = this.checkState(generation, cellIndex);
-				generation.get(cellIndex).setState(newState);
+				newStates.add(newState);
+			}
+			
+			for(int cellIndex = 0; cellIndex < this.length; cellIndex++) {
+				generation.get(cellIndex).setState(newStates.get(cellIndex));
 			}
 		}
 	}
